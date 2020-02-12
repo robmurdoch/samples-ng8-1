@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent  { docker { image 'node:10' } }
     stages {
         stage('Build') {
             steps {
-                bat 'set'
+                bat 'ng build --prod --aot --sm --progress=false'
             }
         }
     }
